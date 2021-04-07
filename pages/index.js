@@ -4,6 +4,41 @@ import Link from 'next/link'
 import Date from '../components/date'
 import utilStyles from '../styles/utils.module.css'
 import { getSortedPostsData } from '../lib/posts'
+import { Tabs, TabLink, TabContent } from 'react-tabs-redux';
+
+const styles = {
+  tabs: {
+    width: '800px',
+    display: 'inline-block',
+    marginRight: '30px',
+    verticalAlign: 'top'
+  },
+  links: {
+    margin: 0,
+    padding: 0
+  },
+  tabLink: {
+    lineHeight: '30px',
+    padding:'0 10px',
+    cursor: 'pointer',
+    border: 'none',
+    borderBottom: '2px solid transparent',
+    display: 'inline-block',
+    backgroundColor:'white',
+    fontSize:'1.5rem',
+    color:'gray'
+  },
+  activeLinkStyle: {
+    // borderBottom: '2px solid #333'
+  },
+  visibleTabStyle: {
+    display: 'inline-block'
+  },
+  content: {
+    paddingTop: '20px',
+    paddingLeft: '10px'
+  },
+};
 
 export async function getStaticProps(){
   const allPostsData = getSortedPostsData()
@@ -27,20 +62,49 @@ export default function Home({ allPostsData }) {
         </p>
       </section>
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
-        <h2 className={utilStyles.headingLg}>Blog</h2>
-        <ul className={utilStyles.list}>
-          {allPostsData.map(({ id, date, title }) => (
-            <li className={utilStyles.listItem} key={id}>
-              <Link href={`/posts/${id}`}>
-                <a>{title}</a>
-              </Link>
-              <br />
-              <small className={utilStyles.lightText}>
-                <Date dateString={date}></Date>
-              </small>
-            </li>
-          ))}
-        </ul>
+
+        <div id="plain-react" style={{marginTop:'20px'}}>
+            <Tabs
+              activeLinkStyle={styles.activeLinkStyle}
+              visibleTabStyle={styles.visibleTabStyle}
+              style={styles.tabs}
+            >
+              <div style={styles.links}>
+                <TabLink to="tab1" default style={styles.tabLink}>
+                 Notes
+                </TabLink>
+                <TabLink to="tab2" style={styles.tabLink}>
+                  Books
+                </TabLink>
+                <TabLink to="tab3" style={styles.tabLink}>
+                  Now
+                </TabLink>
+              </div>
+              <div style={styles.content}>
+                <TabContent for="tab1">
+                <ul className={utilStyles.list}>
+                  {allPostsData.map(({ id, date, title }) => (
+                    <li className={utilStyles.listItem} key={id}>
+                      <Link href={`/posts/${id}`}>
+                        <a>{title}</a>
+                      </Link>
+                      <br />
+                      <small className={utilStyles.lightText}>
+                        <Date dateString={date}></Date>
+                      </small>
+                    </li>
+                  ))}
+                </ul>
+                </TabContent>
+                <TabContent for="tab2">
+                  <p>¯\_(ツ)_/¯</p>
+                </TabContent>
+                <TabContent for="tab3">
+                  <p>(╯°□°）╯︵ ┻━┻)</p>
+                </TabContent>
+              </div>
+            </Tabs>
+        </div>
       </section>
     </Layout>
   )

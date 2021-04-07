@@ -25,3 +25,64 @@ img {
   max-width: 100%;
   display: block;
 }
+
+#plain-react .tabs {
+  width: 400px;
+  display: inline-block;
+  margin-right: 30px;
+  vertical-align: top;
+}
+
+#plain-react .tab-links {
+  margin: 0;
+  padding: 0;
+  border: 1px solid #ccc;
+  border-bottom: 1px solid #868686;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  height: 35px;
+  position: relative;
+  top: 5px;
+}
+
+#plain-react .tab-link {
+  padding: 0 15px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  background: transparent;
+  display: inline-block;
+  position: relative;
+  height: 40px;
+  line-height: 41px;
+  top: -4px;
+  left: -1px;
+  outline: none;
+}
+
+#plain-react .tab-link:hover,
+#plain-react .tab-link:focus {
+  color: #666464;
+}
+
+#plain-react .tab-link-active,
+#plain-react .tab-link-active:hover,
+#plain-react .tab-link-active:focus {
+  color: black !important;
+  font-weight: bold;
+  border: 1px solid #868686;
+  border-bottom: 1px solid white;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  background-color: white;
+}
+#plain-react .tab-link-active:after {
+  display: block;
+  content: "";
+  width: 100%;
+  border-bottom: 2px solid gray;
+}
+#plain-react .content {
+  padding: 15px;
+  border: 1px solid #868686;
+  border-top: 1px solid transparent;
+}
