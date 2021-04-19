@@ -4,6 +4,7 @@ import Link from 'next/link'
 import Date from '../components/date'
 import utilStyles from '../styles/utils.module.css'
 import { getSortedPostsData } from '../lib/posts'
+import { getAllBookNames } from '../lib/books'
 import { Tabs, TabLink, TabContent } from 'react-tabs-redux';
 
 const styles = {
@@ -42,13 +43,16 @@ const styles = {
 
 export async function getStaticProps(){
   const allPostsData = getSortedPostsData()
+  const bookNames = await getAllBookNames()
+  console.log(bookNames)
   return {
     props:{
-      allPostsData
+      allPostsData,
+      bookNames
     }
   }
 }
-export default function Home({ allPostsData }) {
+export default function Home({ allPostsData, bookNames }) {
   return (
     <Layout home>
       <Head>
@@ -58,7 +62,7 @@ export default function Home({ allPostsData }) {
         <p>Hello, I’m Rohit. I’m a software engineer working in Singapore. You can contact me on <a href="https://twitter.com/RohitKumarB4U">Twitter</a></p>
         <p>
           This is my personal blog where I share my thoughts, books I'm reading and what I'm learning.
-          I hope that you'll join the conversation.
+          I hope that you'll enjoy the conversation.
         </p>
       </section>
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
@@ -97,7 +101,11 @@ export default function Home({ allPostsData }) {
                 </ul>
                 </TabContent>
                 <TabContent for="tab2">
-                  <p>¯\_(ツ)_/¯</p>
+                  <ul className={utilStyles.list}>
+                  {bookNames.map(({params}) => (
+                    <a>{params.id}</a>
+                  ))}
+                  </ul>
                 </TabContent>
                 <TabContent for="tab3">
                   <p>(╯°□°）╯︵ ┻━┻)</p>
