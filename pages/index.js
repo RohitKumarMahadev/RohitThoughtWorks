@@ -10,7 +10,6 @@ import stylesTab from '../components/layout.module.css'
 
 const styles = {
   tabs: {
-    width: '800px',
     display: 'inline-block',
     marginRight: '30px',
     verticalAlign: 'top'
