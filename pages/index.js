@@ -115,7 +115,7 @@ export default function Home({ allPostsData, bookNames }) {
                         <p style={{marginBottom:'0px',cursor:'pointer'}}><a>{params.id}</a></p>
                       </Link>
                       <small className={utilStyles.lightText}>
-                        <p style={{margin:'0px'}}>Rohit Kumar</p>
+                        <p style={{margin:'0px'}}>John Gray</p>
                       </small>
                     </div>
                   </li>
