@@ -1,13 +1,13 @@
 ---
-title: "Form Follows Function"
+title: "Form Follows Function: Function Follows Form"
 date: "2021-02-28"
 ---
 
 Form follows function interprets that beauty results from purity of function and the absence of frills. This corollary is adopted by designers in a variety of disciplines.
 
-Evolution by natural selection simply transmits genetic patterns from one generation to the next with no **intention** and it is left to each organism to find use of the form that they have inherited. This depicts function follows form.
+In the theory of evolution by natural selection function follows form where genetic patterns are passed from one generation to the next with no **intention** behind and it is left to each organism to find use of the form that they have inherited.
 
-Despite of which follows the other between form and function, it is essential to define success criteria for a good design.
+Despite of which follows the other between form and function, it is essential to define **success criteria** for a good design.
 
 For example,
 
