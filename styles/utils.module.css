@@ -54,3 +54,12 @@
 .spaceBetween {
   padding: 5px;
 }
+
+.preview {
+  display: flex;
+  flex-direction: row;
+}
+.preview-image {
+  flex-shrink: 0;
+  background-size: cover;
+}

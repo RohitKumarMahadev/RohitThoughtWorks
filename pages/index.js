@@ -6,6 +6,7 @@ import utilStyles from '../styles/utils.module.css'
 import { getSortedPostsData } from '../lib/posts'
 import { getAllBookNames } from '../lib/books'
 import { Tabs, TabLink, TabContent } from 'react-tabs-redux';
+import stylesTab from '../components/layout.module.css'
 
 const styles = {
   tabs: {
@@ -39,12 +40,14 @@ const styles = {
     paddingTop: '20px',
     paddingLeft: '10px'
   },
+  previewSpace:{
+    paddingLeft:'10px'
+  }
 };
 
 export async function getStaticProps(){
   const allPostsData = getSortedPostsData()
   const bookNames = await getAllBookNames()
-  console.log(bookNames)
   return {
     props:{
       allPostsData,
@@ -103,7 +106,20 @@ export default function Home({ allPostsData, bookNames }) {
                 <TabContent for="tab2">
                   <ul className={utilStyles.list}>
                   {bookNames.map(({params}) => (
-                    <a>{params.id}</a>
+                    <li className={`${utilStyles.listItem} ${utilStyles.preview}`} key={params.id}>
+                    <div>
+                        <img  src={"/images/"+params.id + ".jpeg"}
+                            className={`${stylesTab.headerImage} ${utilStyles.borderCircle}`} />
+                    </div>
+                    <div style={styles.previewSpace}>
+                      <Link href={`/books/${params.id}`}>
+                        <p style={{marginBottom:'0px',cursor:'pointer'}}><a>{params.id}</a></p>
+                      </Link>
+                      <small className={utilStyles.lightText}>
+                        <p style={{margin:'0px'}}>Rohit Kumar</p>
+                      </small>
+                    </div>
+                  </li>
                   ))}
                   </ul>
                 </TabContent>

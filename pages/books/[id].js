@@ -1,6 +1,5 @@
 import Layout from '../../components/layout'
-import { getAllBookNames } from '../../lib/books'
-//import { getEmotionScore,getOpacityAndFilterByRank } from '../../lib/emotion_recognition'
+import { getAllBookNames, getBookSummary } from '../../lib/books'
 import Head from 'next/head'
 import Date from '../../components/date'
 import utilStyles from '../../styles/utils.module.css'
@@ -13,18 +12,27 @@ export async function getStaticPaths(){
     }
 }
 export async function getStaticProps({ params }){
-    const bookNames = await getAllBookNames()
+    const bookSummary = await getBookSummary(params.id)
     return {
         props: {
-            bookNames
+            bookSummary
         }
     }
 }
-export default function Book({id}){
+export default function Book({bookSummary}){
     return (<Layout>
         <Head>
-            <title>{id}</title>
+            <title>{bookSummary.title}</title>
         </Head>
+        <article>
+            <h1 className={utilStyles.headingXl}>
+            {bookSummary.title}
+            </h1>
+            <div className={utilStyles.lightText}>
+                <Date dateString={bookSummary.date}></Date>
+            </div>
+            <div dangerouslySetInnerHTML={{__html:bookSummary.contentHtml}} />
+        </article>
     </Layout>
     )
 }
