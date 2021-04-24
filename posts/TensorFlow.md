@@ -1,5 +1,5 @@
 ---
-title: "TensorFlow Developer Certification: How I got certified"
+title: "TensorFlow Developer Certification: How I passed the exam"
 date: "2021-03-20"
 ---
 

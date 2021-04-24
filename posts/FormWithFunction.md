@@ -1,5 +1,5 @@
 ---
-title: "Form Follows Function: Function Follows Form"
+title: "Form Follows Function and Function Follows Form"
 date: "2021-02-28"
 ---
 

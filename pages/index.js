@@ -8,6 +8,12 @@ import { getAllBookNames } from '../lib/books'
 import { Tabs, TabLink, TabContent } from 'react-tabs-redux';
 import stylesTab from '../components/layout.module.css'
 
+import fs from 'fs'
+import path from 'path'
+import matter from 'gray-matter'
+import remark from 'remark'
+import html from 'remark-html'
+
 const styles = {
   tabs: {
     display: 'inline-block',
@@ -47,14 +53,23 @@ const styles = {
 export async function getStaticProps(){
   const allPostsData = getSortedPostsData()
   const bookNames = await getAllBookNames()
+  const nowDirectory = path.join(process.cwd(), 'now')
+  const fullPath = path.join(nowDirectory,`now.md`)
+  const fileContents = fs.readFileSync(fullPath,'utf8')
+  const matterResult = matter(fileContents)
+  const processedContent = await remark().use(html).process(matterResult.content)
+  const contentHtml = processedContent.toString()
+  const tasksInHand =  { contentHtml,...matterResult.data}
+
   return {
     props:{
       allPostsData,
-      bookNames
+      bookNames,
+      tasksInHand
     }
   }
 }
-export default function Home({ allPostsData, bookNames }) {
+export default function Home({ allPostsData, bookNames, tasksInHand }) {
   return (
     <Layout home>
       <Head>
@@ -123,7 +138,7 @@ export default function Home({ allPostsData, bookNames }) {
                   </ul>
                 </TabContent>
                 <TabContent for="tab3">
-                  <p>(╯°□°）╯︵ ┻━┻)</p>
+                <div dangerouslySetInnerHTML={{__html:tasksInHand.contentHtml}} />
                 </TabContent>
               </div>
             </Tabs>
