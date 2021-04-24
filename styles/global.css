@@ -32,6 +32,13 @@ td {
   border: 1px solid gray;
   border-collapse: collapse;
 }
+@media only screen and (max-width: 480px) {
+  /* horizontal scrollbar for tables if mobile screen */
+  table {
+    overflow-x: auto;
+    display: block;
+  }
+}
 
 #plain-react .tabs {
   width: 400px;
