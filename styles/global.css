@@ -26,6 +26,13 @@ img {
   display: block;
 }
 
+table,
+th,
+td {
+  border: 1px solid gray;
+  border-collapse: collapse;
+}
+
 #plain-react .tabs {
   width: 400px;
   display: inline-block;

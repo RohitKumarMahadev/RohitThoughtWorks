@@ -9,7 +9,7 @@ In the theory of evolution by natural selection function follows form where gene
 
 Despite of which follows the other between form and function, it is essential to define **success criteria** for a good design.
 
-For example,
+For example in a watch,
 
-- If the success criteria for a watch are defined in terms of **speed and accuracy**,the digital display is superior(Function precedes Form).
+- If the success criteria are defined in terms of **speed and accuracy**,the digital display is superior(Function precedes Form).
 - If the success criteria are defined in terms of **pure aesthetics**, the analog display is superior(Form precedes Function)
