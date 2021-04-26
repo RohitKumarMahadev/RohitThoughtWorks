@@ -7,7 +7,7 @@ TensorFlow is an end-to-end open source library for machine learning(ML) from Go
 
 TensorFlow team offers a certification program to demonstrate and recognize practical machine learning skills through building and training of models to solve deep learning problems
 
-I have been going through ML from past 6 months and set a mini-milestone along my learning journey to take certification exam. Utility of skills beyond certifications is of utmost importance to me. As with everything in life, you gotta be tested once in a while. After all it is a matter of joy to crack open something and quench your thirst of curiosity.
+I have been going through ML from past 6 months and set a mini-milestone along my learning journey to take certification exam. Utility of skills beyond certifications is of utmost importance to me. As with everything in life, you gotta be tested once in a while. After all it is a matter of fun to crack open something and quench your thirst of curiosity.
 
 So I made a curriculum to pass the exam based on
 
