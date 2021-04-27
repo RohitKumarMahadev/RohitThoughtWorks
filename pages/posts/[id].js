@@ -4,6 +4,7 @@ import { getAllPostIds,getPostData } from '../../lib/posts'
 import Head from 'next/head'
 import Date from '../../components/date'
 import utilStyles from '../../styles/utils.module.css'
+import Audiocard from 'audiocard'
 
 export async function getStaticPaths(){
     const paths = getAllPostIds()
@@ -45,6 +46,11 @@ export default function Post({ postData,emotionFilter }){
             <h1 className={utilStyles.headingXl}>
             {postData.title}
             </h1>
+            <Audiocard title="Voice-over for the post "
+                source="http://localhost:3000/speech.mp3"
+                skipBackSeconds={10}
+                skipForwardSeconds={30}
+            />
             <div className={utilStyles.lightText}>
                 <Date dateString={postData.date}></Date>
             </div>
