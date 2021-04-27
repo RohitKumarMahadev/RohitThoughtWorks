@@ -47,7 +47,7 @@ export default function Post({ postData,emotionFilter }){
             {postData.title}
             </h1>
             <Audiocard title="Voice-over for the post "
-                source="http://localhost:3000/speech.mp3"
+                source="https://rohitnotes.com/speech.mp3"
                 skipBackSeconds={10}
                 skipForwardSeconds={30}
             />
