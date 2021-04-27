@@ -46,11 +46,14 @@ export default function Post({ postData,emotionFilter }){
             <h1 className={utilStyles.headingXl}>
             {postData.title}
             </h1>
-            <Audiocard title="Voice-over for the post "
+            {
+                postData.audioFile &&
+                <Audiocard title="Voice-over for the post "
                 source="https://rohitnotes.com/speech.mp3"
                 skipBackSeconds={10}
                 skipForwardSeconds={30}
             />
+            }
             <div className={utilStyles.lightText}>
                 <Date dateString={postData.date}></Date>
             </div>
