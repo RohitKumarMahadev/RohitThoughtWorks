@@ -16,7 +16,7 @@ export default function Layout({ children, home }) {
         <link href="https://fonts.googleapis.com/css2?family=Sen:wght@400;700&display=swap" rel="stylesheet"></link>
         <meta
           name="description"
-          content="Thoughts are butterflies.Enjoy the show.Be a Flaneur."
+          content="Thoughts never captured are thoughts wasted."
         />
         <meta
           property="og:image"
