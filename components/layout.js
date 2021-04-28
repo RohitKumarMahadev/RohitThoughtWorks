@@ -20,7 +20,7 @@ export default function Layout({ children, home }) {
         />
         <meta
           property="og:image"
-          content={`https://rohitnotes.com/images/OGHeader.jpeg`}
+          content={`https://rohitnotes.com/images/OGImage.jpeg`}
         />
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
