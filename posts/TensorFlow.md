@@ -29,4 +29,12 @@ Reading the book slowly to gain intuition, and watching course lessons to unders
 
 Further details about exam environment setup and FAQs are avilable [here](https://www.tensorflow.org/extras/cert/Setting_Up_TF_Developer_Certificate_Exam.pdf?authuser=4). You'll get a feedback right away each time you submit the model during the exam.
 
+After passing the exam,
+
+- you are requested to join fellow TensorFlow developers in [TensorFlow Certificate Network](https://developers.google.com/certification/directory/tensorflow) in the congratulations email.
+- A digital certificate will be issued within couple of days.
+
+Here is mine
+![Rohit's TensorFlow Certificate](/images/TensorFlow.JPG)
+
 Using the above curriculum, If I am able to do it,you can do it as well. Best wishes!
