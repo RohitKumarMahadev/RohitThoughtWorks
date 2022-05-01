@@ -111,10 +111,7 @@ export default function Home({ allPostsData, techPosts }) {
               <TabContent for="tab1">
                 <ul className={utilStyles.list}>
                   {allPostsData.map(({ id, date, title }) => (
-                    <li
-                      className={`{utilStyles.listItem} ${utilStyles.preview}`}
-                      key={id}
-                    >
+                    <li className={utilStyles.listItem} key={id}>
                       <table className={utilStyles.noBorder}>
                         <tbody>
                           <tr className={utilStyles.noBorder}>
