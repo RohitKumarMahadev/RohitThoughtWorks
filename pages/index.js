@@ -168,7 +168,7 @@ export default function Home({ allPostsData, techPosts }) {
                             <tr className={utilStyles.noBorder}>
                               <td className={utilStyles.noBorder}>
                                 <div className={stylesTab.titleImageDiv}>
-                                  {title.charAt(0)}
+                                  {title.charAt(0).toUpperCase()}
                                 </div>
                               </td>
                               <td className={utilStyles.noBorder}>

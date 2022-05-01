@@ -1,5 +1,5 @@
 ---
-title: "Cloud Computing: A beginners"
+title: "Cloud Computing: A beginners Guide"
 date: "2022-02-14"
 ---
 
