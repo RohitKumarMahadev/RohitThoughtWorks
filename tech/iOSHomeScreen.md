@@ -1,5 +1,5 @@
 ---
-title: "Customize iOS Home Screen: How I did it with Scriptable and Widgetsmith"
+title: "iOS Home Screen: With Scriptable and Widgetsmith"
 date: "2020-09-28"
 ---
 

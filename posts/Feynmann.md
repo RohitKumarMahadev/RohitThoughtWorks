@@ -1,5 +1,5 @@
 ---
-title: "The Feynman Technique: To learn better"
+title: "Feynman Technique: To learn better"
 date: "2021-02-14"
 ---
 
