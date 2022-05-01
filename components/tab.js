@@ -24,7 +24,7 @@ const styles = {
     // borderBottom: '2px solid transparent',
     display: 'inline-block',
     backgroundColor:'white',
-    fontSize:'1.5rem'
+    fontSize:'1.2rem'
   },
   activeLinkStyle: {
     // borderBottom: '2px solid #333'

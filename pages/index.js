@@ -5,6 +5,7 @@ import Date from '../components/date'
 import utilStyles from '../styles/utils.module.css'
 import { getSortedPostsData } from '../lib/posts'
 import { getAllBookNames } from '../lib/books'
+import { getTechPostsByDate } from '../lib/tech'
 import { Tabs, TabLink, TabContent } from 'react-tabs-redux';
 import stylesTab from '../components/layout.module.css'
 
@@ -32,7 +33,7 @@ const styles = {
     borderBottom: '2px solid transparent',
     display: 'inline-block',
     backgroundColor:'white',
-    fontSize:'1.5rem',
+    fontSize:'1.2rem',
     color:'gray'
   },
   activeLinkStyle: {
@@ -52,6 +53,7 @@ const styles = {
 
 export async function getStaticProps(){
   const allPostsData = getSortedPostsData()
+  const techPosts =  getTechPostsByDate()
   const bookNames = await getAllBookNames()
   const nowDirectory = path.join(process.cwd(), 'now')
   const fullPath = path.join(nowDirectory,`now.md`)
@@ -64,12 +66,11 @@ export async function getStaticProps(){
   return {
     props:{
       allPostsData,
-      bookNames,
-      tasksInHand
+      techPosts
     }
   }
 }
-export default function Home({ allPostsData, bookNames, tasksInHand }) {
+export default function Home({ allPostsData, techPosts }) {
   return (
     <Layout home>
       <Head>
@@ -94,11 +95,11 @@ export default function Home({ allPostsData, bookNames, tasksInHand }) {
                 <TabLink to="tab1" default style={styles.tabLink}>
                  Notes
                 </TabLink>
-                <TabLink to="tab2" style={styles.tabLink}>
-                  Books
-                </TabLink>
+                {/* <TabLink to="tab2" style={styles.tabLink}>
+                  Finance
+                </TabLink> */}
                 <TabLink to="tab3" style={styles.tabLink}>
-                  Now
+                  Tech
                 </TabLink>
               </div>
               <div style={styles.content}>
@@ -109,7 +110,6 @@ export default function Home({ allPostsData, bookNames, tasksInHand }) {
                       <Link href={`/posts/${id}`}>
                         <a>{title}</a>
                       </Link>
-                      <br />
                       <small className={utilStyles.lightText}>
                         <Date dateString={date}></Date>
                       </small>
@@ -118,7 +118,7 @@ export default function Home({ allPostsData, bookNames, tasksInHand }) {
                 </ul>
                 </TabContent>
                 <TabContent for="tab2">
-                  <ul className={utilStyles.list}>
+                  {/* <ul className={utilStyles.list}>
                   {bookNames.map(({params}) => (
                     <li className={`${utilStyles.listItem} ${utilStyles.preview}`} key={params.id}>
                     <div>
@@ -135,10 +135,23 @@ export default function Home({ allPostsData, bookNames, tasksInHand }) {
                     </div>
                   </li>
                   ))}
-                  </ul>
+                  </ul> */}
                 </TabContent>
                 <TabContent for="tab3">
-                <div dangerouslySetInnerHTML={{__html:tasksInHand.contentHtml}} />
+                {/* <div dangerouslySetInnerHTML={{__html:tasksInHand.contentHtml}} /> */}
+                { <ul className={utilStyles.list}>
+                  {techPosts.map(({ id, date, title }) => (
+                    <li className={utilStyles.listItem} key={id}>
+                      <Link href={`/tech/${id}`}>
+                        { <a>{title}</a> }
+                      </Link>
+                      <br />
+                      { <small className={utilStyles.lightText}>
+                        <Date dateString={date}></Date>
+                      </small> }
+                    </li>
+                  ))}
+                </ul> }
                 </TabContent>
               </div>
             </Tabs>

@@ -4,7 +4,9 @@ import { getAllPostIds,getPostData } from '../../lib/posts'
 import Head from 'next/head'
 import Date from '../../components/date'
 import utilStyles from '../../styles/utils.module.css'
+import styles from '../../components/layout.module.css'
 import Audiocard from 'audiocard'
+import Link from 'next/link'
 
 export async function getStaticPaths(){
     const paths = getAllPostIds()
@@ -43,9 +45,40 @@ export default function Post({ postData,emotionFilter }){
             <title>{postData.title}</title>
         </Head>
         <article>
-            <h1 className={utilStyles.headingXl}>
+            <h2 className={utilStyles.headingXl}>
             {postData.title}
-            </h1>
+            </h2>
+            <table className={utilStyles.noBorder}>
+                <tbody>
+                <tr className={utilStyles.noBorder}>
+                    <td className={utilStyles.noBorder}>
+                        <Link href="/">
+                            <a>
+                                <img
+                                src="/images/Profile.png"
+                                className={`${styles.headerPostImage} ${utilStyles.borderCircle}`}
+                                />
+                            </a>
+                        </Link>
+                    </td>
+                    <td className={utilStyles.noBorder}>
+                        <Link href="/">
+                            <a className={`${utilStyles.colorInherit}`} style={{fontSize:'medium'}}>Rohit Kumar Mahadev</a>
+                        </Link>
+                        <table className={utilStyles.noBorder}>
+                            <tbody>
+                                <tr className={utilStyles.noBorder}>
+                                    <td class={`${utilStyles.lightText} ${utilStyles.noBorder}`}>
+                                        <Date dateString={postData.date}></Date>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+
             {
                 postData.audioFile &&
                 <Audiocard title="Voice-over for the post "
@@ -54,9 +87,9 @@ export default function Post({ postData,emotionFilter }){
                 skipForwardSeconds={30}
             />
             }
-            <div className={utilStyles.lightText}>
+            {/* <div className={utilStyles.lightText}>
                 <Date dateString={postData.date}></Date>
-            </div>
+            </div> */}
             {/* <div>
                 <span style={{paddingLeft:'0px',filter:'grayScale('+emotionFilter['anger'].filter+')', opacity:emotionFilter['anger'].opacity }} className={utilStyles.spaceBetween} dangerouslySetInnerHTML={{__html:'&#x1F620'}}/>
                 <span style={{filter:'grayScale('+emotionFilter['fear'].filter+')', opacity:emotionFilter['fear'].opacity}} className={utilStyles.spaceBetween} dangerouslySetInnerHTML={{__html:'&#x1F628'}}/>

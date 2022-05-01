@@ -1,5 +1,5 @@
 .heading2Xl {
-  font-size: 2.5rem;
+  font-size: 2rem;
   line-height: 1.2;
   font-weight: 800;
   letter-spacing: -0.05rem;
@@ -7,7 +7,7 @@
 }
 
 .headingXl {
-  font-size: 2rem;
+  font-size: 1.4rem;
   line-height: 1.3;
   font-weight: 800;
   letter-spacing: -0.05rem;
@@ -15,7 +15,7 @@
 }
 
 .headingLg {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   line-height: 1.4;
   margin: 1rem 0;
 }
@@ -26,7 +26,7 @@
 }
 
 .borderCircle {
-  border-radius: 9999px;
+  border-radius: 50%;
 }
 
 .colorInherit {
@@ -44,11 +44,13 @@
 }
 
 .listItem {
-  margin: 0 0 1.25rem;
+  margin: 0 0 0.6rem;
 }
 
 .lightText {
   color: #999;
+  font-size: medium;
+  display: block;
 }
 
 .spaceBetween {
@@ -62,4 +64,8 @@
 .preview-image {
   flex-shrink: 0;
   background-size: cover;
+}
+
+.noBorder {
+  border: none;
 }
