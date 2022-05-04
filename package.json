@@ -8,14 +8,13 @@
     "start": "next start"
   },
   "dependencies": {
-    "@tensorflow/tfjs": "^3.0.0",
-    "@tensorflow/tfjs-node": "^3.0.0",
     "audiocard": "^1.0.0",
     "date-fns": "^2.16.1",
     "gray-matter": "^4.0.2",
     "next": "^10.0.0",
-    "react": "16.13.1",
-    "react-dom": "16.13.1",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
+    "react-elastic-carousel": "^0.11.5",
     "react-tabs-redux": "^4.0.0",
     "remark": "^13.0.0",
     "remark-gfm": "^1.0.0",

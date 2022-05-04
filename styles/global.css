@@ -102,3 +102,13 @@ td {
   border: 1px solid #868686;
   border-top: 1px solid transparent;
 }
+/* .rec.rec-arrow:disabled {
+  visibility: hidden;
+} */
+.rec.rec-arrow:hover:enabled {
+  color:white !important;
+  background-color: black !important;
+}
+.rec.rec-arrow{
+  background-color: white;
+}

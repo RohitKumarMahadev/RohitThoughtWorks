@@ -69,3 +69,63 @@
 .noBorder {
   border: none;
 }
+
+.flexContainer {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  -ms-box-orient: horizontal;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: flex;
+  flex-wrap:wrap;
+}
+
+.flexItem {
+  background: #e1e1e1;
+  padding: 5px;
+  margin: 10px 10px 0px 0px;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width:200px;
+  height:300px;
+  border-radius: 5%;
+}
+.wrap{
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+.bookCover{
+  width: 150px;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+.bookHolder{
+  display: flex;
+  flex-direction: column;
+}
+.bookTitle{
+  font-size: small;
+  text-align: center;
+}
+.linkStyle{
+  color: #000;
+  display: inline-block;
+  line-height: 1;
+  padding: 0.5rem;
+  position: relative;
+  text-decoration: none;
+  transition: all .2s;
+  box-shadow: 0 0 2px 0px #333;
+}
+.linkStyle:hover{
+  color:white;
+  background-color:black;
+  text-decoration: none;
+}
