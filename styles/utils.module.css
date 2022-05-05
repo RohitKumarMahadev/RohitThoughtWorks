@@ -97,6 +97,13 @@
   width:200px;
   height:300px;
   border-radius: 5%;
+  -webkit-border-radius: 5%;
+  -moz-border-radius:5%;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -moz-flex;
+  display: -webkit-flex;
 }
 .wrap{
   -webkit-flex-wrap: wrap;
