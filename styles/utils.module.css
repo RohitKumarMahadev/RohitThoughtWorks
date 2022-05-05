@@ -72,7 +72,6 @@
 
 .flexContainer {
   padding: 0;
-  margin: 0;
   list-style: none;
   -ms-box-orient: horizontal;
   display: -webkit-box;
@@ -115,6 +114,7 @@
 .bookHolder{
   display: flex;
   flex-direction: column;
+  margin: 10px;
 }
 .bookTitle{
   font-size: small;
