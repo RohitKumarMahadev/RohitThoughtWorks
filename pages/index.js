@@ -8,7 +8,7 @@ import { getBookShelfPreview } from "../lib/books";
 import { getTechPostsByDate } from "../lib/tech";
 import { Tabs, TabLink, TabContent } from "react-tabs-redux";
 import stylesTab from "../components/layout.module.css";
-import Carousel from "react-elastic-carousel";
+import Carousel, { consts } from "react-elastic-carousel";
 
 import fs from "fs";
 import path from "path";
@@ -82,6 +82,18 @@ export default function Home({ allPostsData, techPosts, books }) {
     { width: 1450, itemsToShow: 5 },
     { width: 1750, itemsToShow: 6 },
   ];
+  function myArrow({ type, onClick, isEdge }) {
+    const pointer = type === consts.PREV ? "↼" : "⇀";
+    return (
+      <button
+        className={utilStyles.buttonHover}
+        onClick={onClick}
+        disabled={isEdge}
+      >
+        {pointer}
+      </button>
+    );
+  }
   return (
     <Layout home>
       <Head>
@@ -185,7 +197,7 @@ export default function Home({ allPostsData, techPosts, books }) {
                     ))}
                   </div>
                 } */}
-                <Carousel breakPoints={breakPoints}>
+                <Carousel breakPoints={breakPoints} renderArrow={myArrow}>
                   {books.map(({ id, source_url, author, filename }) => (
                     <div className={utilStyles.bookHolder} key={id}>
                       <small className={utilStyles.bookTitle}>{filename}</small>
