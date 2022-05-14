@@ -94,6 +94,23 @@ export default function Home({ allPostsData, techPosts, books }) {
       </button>
     );
   }
+  const designs = [
+    {
+      id: 1,
+      title: "Shoe App",
+      source: "/thumbs/ShoeApp.png",
+    },
+    {
+      id: 2,
+      title: "Food App",
+      source: "/thumbs/FoodApp.png",
+    },
+    {
+      id: 3,
+      title: "File Manager",
+      source: "/thumbs/FileManager.png",
+    },
+  ];
   return (
     <Layout home>
       <Head>
@@ -106,8 +123,9 @@ export default function Home({ allPostsData, techPosts, books }) {
           <a href="https://twitter.com/RohitKumarB4U">Twitter</a>
         </p>
         <p>
-          This is my personal blog where I share my thoughts, books I'm reading
-          and what I'm learning. I hope that you'll enjoy the conversation.
+          This is my digital garden - a compendium of my thoughts, books I'm
+          reading and created along the way. I hope that you'll enjoy the
+          conversation.
         </p>
       </section>
 
@@ -126,7 +144,10 @@ export default function Home({ allPostsData, techPosts, books }) {
                 Tech
               </TabLink>
               <TabLink to="tab3" style={styles.tabLink}>
-                Bookshelf
+                Design
+              </TabLink>
+              <TabLink to="tab4" style={styles.tabLink}>
+                Books
               </TabLink>
             </div>
             <div style={styles.content}>
@@ -159,7 +180,7 @@ export default function Home({ allPostsData, techPosts, books }) {
                   ))}
                 </ul>
               </TabContent>
-              <TabContent for="tab3">
+              <TabContent for="tab4">
                 {/* <ul className={utilStyles.list}>
                   {bookNames.map(({params}) => (
                     <li className={`${utilStyles.listItem} ${utilStyles.preview}`} key={params.id}>
@@ -226,6 +247,23 @@ export default function Home({ allPostsData, techPosts, books }) {
                     </a>
                   </Link>
                 </div>
+              </TabContent>
+              <TabContent for="tab3">
+                <Carousel breakPoints={breakPoints} renderArrow={myArrow}>
+                  {designs.map(({ id, source, title }) => (
+                    <div className={utilStyles.thumbHolder} key={id}>
+                      <small className={utilStyles.bookTitle}>{title}</small>
+                      <div className={utilStyles.thumbFlexItem} key={id}>
+                        <div>
+                          <img
+                            className={utilStyles.thumbImage}
+                            src={source}
+                          ></img>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </Carousel>
               </TabContent>
               <TabContent for="tab2">
                 {/* <div dangerouslySetInnerHTML={{__html:tasksInHand.contentHtml}} /> */}

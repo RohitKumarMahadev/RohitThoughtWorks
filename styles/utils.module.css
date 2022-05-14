@@ -116,6 +116,7 @@
   flex-direction: column;
   margin: 10px;
 }
+
 .bookTitle{
   font-size: small;
   text-align: center;
@@ -170,3 +171,27 @@
   background-color:black !important;
 }
 }
+.thumbHolder{
+  display: flex;
+  flex-direction: column;
+}
+.thumbFlexItem{
+  background-color:#d6e4dd9c;
+  padding: 0.3rem;
+  margin:5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 30% 30% 30% 30% / 30% 30% 30% 30%;
+  -webkit-border-radius: 30% 30% 30% 30% / 30% 30% 30% 30%;
+  -moz-border-radius:30% 30% 30% 30% / 30% 30% 30% 30%;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -moz-flex;
+  display: -webkit-flex;
+}
+.thumbImage{
+  border-radius: 30% 30% 30% 30% / 30% 30% 30% 30%;
+}
+
