@@ -178,10 +178,11 @@
 .thumbFlexItem{
   background-color:#d6e4dd9c;
   padding: 0.3rem;
-  margin:5px;
+  margin:3px;
   display: flex;
   justify-content: center;
   align-items: center;
+  width:12rem;
   border-radius: 30% 30% 30% 30% / 30% 30% 30% 30%;
   -webkit-border-radius: 30% 30% 30% 30% / 30% 30% 30% 30%;
   -moz-border-radius:30% 30% 30% 30% / 30% 30% 30% 30%;
@@ -193,5 +194,10 @@
 }
 .thumbImage{
   border-radius: 30% 30% 30% 30% / 30% 30% 30% 30%;
+}
+@media screen and (max-width: 900px) {
+  .thumbFlexItem {
+    width: 8rem;
+  }
 }
 
