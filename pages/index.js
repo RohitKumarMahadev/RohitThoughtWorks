@@ -9,6 +9,7 @@ import { getTechPostsByDate } from "../lib/tech";
 import { Tabs, TabLink, TabContent } from "react-tabs-redux";
 import stylesTab from "../components/layout.module.css";
 import Carousel, { consts } from "react-elastic-carousel";
+import { getDesignThumbs } from "../lib/design";
 
 import fs from "fs";
 import path from "path";
@@ -56,6 +57,7 @@ export async function getStaticProps() {
   const allPostsData = getSortedPostsData();
   const techPosts = getTechPostsByDate();
   const books = await getBookShelfPreview();
+  const thumbs = getDesignThumbs();
   const nowDirectory = path.join(process.cwd(), "now");
   const fullPath = path.join(nowDirectory, `now.md`);
   const fileContents = fs.readFileSync(fullPath, "utf8");
@@ -70,10 +72,11 @@ export async function getStaticProps() {
       allPostsData,
       techPosts,
       books,
+      thumbs,
     },
   };
 }
-export default function Home({ allPostsData, techPosts, books }) {
+export default function Home({ allPostsData, techPosts, books, thumbs }) {
   const breakPoints = [
     { width: 1, itemsToShow: 1, pagination: false },
     { width: 550, itemsToShow: 3, itemsToScroll: 3, pagination: false },
@@ -94,23 +97,7 @@ export default function Home({ allPostsData, techPosts, books }) {
       </button>
     );
   }
-  const designs = [
-    {
-      id: 1,
-      title: "Shoe App",
-      source: "/thumbs/ShoeApp.png",
-    },
-    {
-      id: 2,
-      title: "Food App",
-      source: "/thumbs/FoodApp.png",
-    },
-    {
-      id: 3,
-      title: "File Manager",
-      source: "/thumbs/FileManager.png",
-    },
-  ];
+
   return (
     <Layout home>
       <Head>
@@ -123,9 +110,9 @@ export default function Home({ allPostsData, techPosts, books }) {
           <a href="https://twitter.com/RohitKumarB4U">Twitter</a>
         </p>
         <p>
-          This is my digital garden - a compendium of my thoughts, books I'm
-          reading and created along the way. I hope that you'll enjoy the
-          conversation.
+          This is my digital garden - a compendium of thoughts, books I'm
+          reading, things I've learned and created along the way. I hope that
+          you'll enjoy the conversation.
         </p>
       </section>
 
@@ -250,7 +237,7 @@ export default function Home({ allPostsData, techPosts, books }) {
               </TabContent>
               <TabContent for="tab3">
                 <Carousel breakPoints={breakPoints} renderArrow={myArrow}>
-                  {designs.map(({ id, source, title }) => (
+                  {thumbs.map(({ id, source, title }) => (
                     <div className={utilStyles.thumbHolder} key={id}>
                       <small className={utilStyles.bookTitle}>{title}</small>
                       <div className={utilStyles.thumbFlexItem} key={id}>
