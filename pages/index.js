@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Image from "next/image";
 import Layout, { siteTitle } from "../components/layout";
 import Link from "next/link";
 import Date from "../components/date";
@@ -241,12 +242,13 @@ export default function Home({ allPostsData, techPosts, books, thumbs }) {
                     <div className={utilStyles.thumbHolder} key={id}>
                       <small className={utilStyles.bookTitle}>{title}</small>
                       <div className={utilStyles.thumbFlexItem} key={id}>
-                        <div>
-                          <img
-                            className={utilStyles.thumbImage}
-                            src={source}
-                          ></img>
-                        </div>
+                        <Image
+                          priority
+                          width={239}
+                          height={190}
+                          className={utilStyles.thumbImage}
+                          src={source}
+                        ></Image>
                       </div>
                     </div>
                   ))}
